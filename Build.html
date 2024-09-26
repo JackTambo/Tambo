@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Web Page Builder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      margin: 0;
+    }
+    #sidebar {
+      width: 200px;
+      background-color: #f4f4f4;
+      padding: 10px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    #sidebar h3 {
+      margin-top: 0;
+    }
+    .element {
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #ddd;
+      border: 1px solid #ccc;
+      cursor: grab;
+    }
+    #canvas {
+      flex: 1;
+      background-color: #fff;
+      border-left: 2px solid #ccc;
+      position: relative;
+      overflow: auto;
+    }
+    .draggable {
+      position: absolute;
+      border: 1px dashed #000;
+      padding: 10px;
+      background-color: rgba(255,255,255,0.8);
+    }
+  </style>
+</head>
+<body>
+  <div id="sidebar">
+    <h3>Elements</h3>
+    <div class="element" draggable="true" data-type="text">Text</div>
+    <div class="element" draggable="true" data-type="image">Image</div>
+    <div class="element" draggable="true" data-type="container">Container</div>
+  </div>
+
+  <div id="canvas"></div>
+
+  <script src="builder.js"></script>
+</body>
+</html>

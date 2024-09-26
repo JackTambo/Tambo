@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(10, 30px);
+            grid-template-rows: repeat(10, 30px);
+            gap: 2px;
+            border: 2px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .cell {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border: 1px solid #ddd;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .cell:hover {
+            opacity: 0.7;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .color-picker {
+            border: none;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #resetBtn {
+            background-color: #dc3545;
+        }
+
+        #resetBtn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Pixel Art Generator</h1>
+
+    <div class="grid" id="pixelGrid">
+        <!-- 10x10 grid cells will be created by JavaScript -->
+    </div>
+
+    <div class="controls">
+        <label for="colorPicker">Pick a Color: </label>
+        <input type="color" id="colorPicker" class="color-picker" value="#000000">
+        
+        <button id="exportBtn">Export as PNG</button>
+        <button id="resetBtn">Reset</button>
+    </div>
+
+    <canvas id="canvas" style="display:none;"></canvas>
+</div>
+
+<script>
+    // Variables
+    const grid = document.getElementById('pixelGrid');
+    const colorPicker = document.getElementById('colorPicker');
+    const canvas = document.getElementById('canvas');
+    const exportBtn = document.getElementById('exportBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    let currentColor = colorPicker.value;
+
+    // Create 10x10 grid
+    for (let i = 0; i < 100; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.addEventListener('click', function () {
+            cell.style.backgroundColor = currentColor;
+        });
+        grid.appendChild(cell);
+    }
+
+    // Change current color when a new color is selected
+    colorPicker.addEventListener('input', function () {
+        currentColor = colorPicker.value;
+    });
+
+    // Export pixel art as image
+    exportBtn.addEventListener('click', function () {
+        const cells = document.querySelectorAll('.cell');
+        canvas.width = 10;
+        canvas.height = 10;
+        const ctx = canvas.getContext('2d');
+
+        cells.forEach((cell, index) => {
+            const x = index % 10;
+            const y = Math.floor(index / 10);
+            ctx.fillStyle = cell.style.backgroundColor || '#ffffff';
+            ctx.fillRect(x, y, 1, 1);
+        });
+
+        const link = document.createElement('a');
+        link.download = 'pixel-art.png';
+        link.href = canvas.toDataURL();
+        link.click();
+    });
+
+    // Reset the grid
+    resetBtn.addEventListener('click', function () {
+        const cells = document.querySelectorAll('.cell');
+        cells.forEach(cell => {
+            cell.style.backgroundColor = 'white';
+        });
+    });
+</script>
+
+</body>
+</html>
