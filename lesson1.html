@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: Introduction to HTML</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Clear, readable font -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif; /* Use Roboto for better readability */
+        }
+
+        body {
+            background-color: #f0f8ff; /* Light background for comfort */
+            color: #333; /* Dark text for readability */
+            overflow: auto; /* Allow scrolling */
+        }
+
+        header {
+            background-color: #4caf50; /* Green header color */
+            color: white;
+            padding: 20px; /* Space around header */
+            text-align: center; /* Center header text */
+        }
+
+        nav ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 10px 0; /* Padding around nav */
+        }
+
+        nav ul li {
+            display: inline; /* Inline navigation items */
+            margin: 0 15px; /* Space between items */
+        }
+
+        nav ul li a {
+            color: white; /* White links */
+            text-decoration: none; /* Remove underline */
+            font-weight: bold; /* Bold links */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b; /* Yellow on hover */
+        }
+
+        main {
+            padding: 20px; /* Space around main content */
+            text-align: center; /* Center text */
+        }
+
+        section {
+            margin: 20px 0; /* Space between sections */
+            padding: 20px; /* Padding inside sections */
+            background-color: #ffffff; /* White background for sections */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+        }
+
+        h1, h2 {
+            color: #2e7d32; /* Dark green for headings */
+        }
+
+        pre {
+            background-color: #f9f9f9; /* Light grey background for code */
+            padding: 15px; /* Padding inside pre */
+            border-radius: 5px; /* Rounded corners for pre */
+            overflow: auto; /* Allow scrolling for long code */
+            font-family: 'Courier New', Courier, monospace; /* Monospace for code */
+            text-align: left; /* Align text to the left for code */
+        }
+
+        input[type="text"] {
+            padding: 10px; /* Padding inside input */
+            border: 2px solid #4caf50; /* Border color */
+            border-radius: 5px; /* Rounded corners */
+            margin: 10px 0; /* Space above and below input */
+            width: 80%; /* Width of input */
+            font-size: 16px; /* Font size for input */
+        }
+
+        button {
+            background-color: #ff5722; /* Bright orange button */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding inside button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth background transition */
+            font-size: 16px; /* Button font size */
+        }
+
+        button:hover {
+            background-color: #ff7043; /* Darker orange on hover */
+        }
+
+        footer {
+            text-align: center; /* Center footer text */
+            padding: 20px; /* Space around footer */
+            background-color: #4caf50; /* Green footer color */
+            color: white; /* White text */
+            position: relative; /* Positioning for footer */
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lesson 1: Introduction to HTML</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="lesson1.html">Lesson 1</a></li>
+                <li><a href="lesson2.html">Lesson 2</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>What is HTML?</h2>
+            <p>HTML stands for Hypertext Markup Language. It is the standard markup language for creating web pages.</p>
+            <h3>HTML Structure</h3>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;This is a Heading&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </section>
+        <section>
+            <h2>Interactive Quiz</h2>
+            <p>What does HTML stand for?</p>
+            <input type="text" id="answer" placeholder="Your answer">
+            <button onclick="checkAnswer()">Submit</button>
+            <p id="result"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 FreePups.org</p>
+    </footer>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value.toLowerCase();
+            const result = document.getElementById('result');
+
+            if (answer === 'hypertext markup language') {
+                result.textContent = 'Correct! 🎉';
+                result.style.color = 'green'; // Green for correct answer
+            } else {
+                result.textContent = 'Incorrect! Try again.';
+                result.style.color = 'red'; // Red for incorrect answer
+            }
+        }
+    </script>
+</body>
+</html>
