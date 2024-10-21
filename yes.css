@@ -1,0 +1,71 @@
+/* style.css */
+@font-face {
+    font-family: 'Open Dyslexic';
+    src: url('opendyslexic.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(to right, #4caf50, #e1f5fe); /* Nice background gradient */
+    font-family: 'Open Dyslexic', sans-serif; /* Use local Open Dyslexic font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.app-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px; /* Adjusted max width for the button screen */
+    text-align: center;
+    position: relative; /* Position for the corner icon */
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #00796b; /* Darker shade for title */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around; /* Space between buttons */
+    margin-bottom: 20px; /* Space below buttons */
+}
+
+button {
+    padding: 20px;
+    font-size: 24px;
+    background-color: #ff6f00; /* Fun orange color */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-family: 'Open Dyslexic', sans-serif; /* Use Open Dyslexic font */
+}
+
+button:hover {
+    background-color: #e65100; /* Darker orange */
+}
+
+.icon-link {
+    position: absolute;
+    top: 10px; /* Adjust position as needed */
+    right: 10px; /* Adjust position as needed */
+    font-size: 36px; /* Icon size */
+    color: #00796b; /* Color for the back icon */
+    text-decoration: none; /* No underline */
+}
+
+.icon-link:hover {
+    color: #005f51; /* Darker shade on hover */
+}

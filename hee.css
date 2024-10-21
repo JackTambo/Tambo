@@ -1,0 +1,11 @@
+/* styles.css */
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+    background-color: #000;
+    user-select: none; /* Prevent text selection */
+}
+
+canvas {
+    display: block;
+}

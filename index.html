@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Puppies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Roboto', sans-serif; /* Updated font */
+        }
+
+        h1.page-header {
+            text-align: center; /* Center align the header */
+            font-size: 3em; /* Large header size */
+            margin-top: 20px; /* Space above the header */
+            color: #00B7FF; /* Header color */
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 cards per row */
+            gap: 10px; /* Gap between cards */
+            padding: 20px; /* Padding around the grid */
+        }
+
+        .card {
+            width: 190px;
+            height: 254px;
+            background: #07182E;
+            position: relative;
+            display: flex;
+            flex-direction: column; /* Added for vertical alignment */
+            justify-content: center; /* Center align items */
+            align-items: center; /* Center align items */
+            overflow: hidden;
+            border-radius: 20px;
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        .card h2, .card {
+            z-index: 1; /* Stack order */
+            color: white; /* Text color */
+            text-align: center; /* Center text */
+            margin: 10px 0; /* Margin for spacing */
+        }
+
+        .card::before {
+            content: ""; /* Necessary for pseudo-element */
+            position: absolute;
+            width: 100px;
+            height: 130%;
+            background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+            animation: rotBGimg 3s linear infinite; /* Rotating background */
+            transition: all 0.2s linear; /* Smooth transition */
+        }
+
+        @keyframes rotBGimg {
+            from {
+                transform: rotate(0deg); /* Start rotation */
+            }
+            to {
+                transform: rotate(360deg); /* Full rotation */
+            }
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            background: #07182E; /* Overlay color */
+            inset: 5px; /* Space from edges */
+            border-radius: 15px; /* Rounded edges */
+        }
+
+        .song {
+            z-index: 1; /* Stack order */
+            color: #C3B1E1; /* Text color */
+            text-align: center; /* Center text */
+            margin: 10px 0; /* Margin for spacing */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-header">FreePups.org</h1> <!-- Large header -->
+    <div class="container">
+        <!-- Create cards with clickable functionality -->
+        <div class="card" onclick="location.href='Cube.html'">
+            <h2>The Color Changing Cube</h2>
+            <div class="song"><i>Pretty self-explanatory</i></div>
+        </div>
+        <div class="card" onclick="location.href='Matrix.html'">
+            <h2>The Matrix Rain</h2>
+            <div class="song"><i>Letters and numbers<br>fall from the sky and stuff</i></div>
+        </div>
+        <div class="card" onclick="location.href='Part.html'">
+            <h2>Particles</h2>
+            <div class="song"><i>When you tap the screen, stuff happens</i></div>
+        </div>
+        <div class="card" onclick="location.href='santa.html'">
+            <h2>???</h2>
+            <div class="song"><i>Epilepsy Warning</i></div>
+        </div>
+        <div class="card" onclick="location.href='Draw.html'">
+            <h2>Draw</h2>
+            <div class="song"><i>Again... Pretty self-explanatory</i></div>
+        </div>
+        <div class="card" onclick="location.href='Ripple.html'">
+            <h2>Ripple</h2>
+            <div class="song"><i>Circles and stuff</i></div>
+        </div>
+        <div class="card" onclick="location.href='Non.html'">
+            <h2>Non-Verbal Keyboard</h2>
+            <div class="song"><i>The only useful thing here</i></div>
+        </div>
+        <div class="card" onclick="location.href='Game.html'">
+            <h2>Upcoming Games</h2>
+            <div class="song"><i>You know what I'm about to say</i></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* styles.css */
+@font-face {
+    font-family: 'Open Dyslexic';
+    src: url('OpenDyslexic3-Regular.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(to right, #4caf50, #e1f5fe); /* Nice background gradient */
+    font-family: 'Open Dyslexic', sans-serif; /* Use local Open Dyslexic font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.app-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative; /* Position for the corner icon */
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #00796b; /* Darker shade for title */
+}
+
+.display {
+    background: #e1f5fe;
+    border: 2px solid #4dd0e1;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 40px; /* Increased font size for better visibility */
+    height: 80px; /* Increased height for the display */
+    margin-bottom: 20px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-width: 300px; /* Minimum width to prevent overflow */
+}
+
+.keyboard {
+    font-family: 'Open Dyslexic', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+}
+
+button {
+    padding: 20px;
+    font-size: 24px;
+    background-color: #ff6f00; /* Fun orange color */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #e65100; /* Darker orange */
+}
+
+button:active {
+    transform: scale(0.95); /* Button press effect */
+}
+
+button:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+button.special {
+    background-color: #ffab00; /* Different color for special keys */
+}
+
+.icon {
+    font-size: 28px; /* Adjust icon size */
+}
+
+.icon-link {
+    position: absolute;
+    top: 10px; /* Adjust position as needed */
+    right: 10px; /* Adjust position as needed */
+    font-size: 36px; /* Icon size */
+    color: green; /* Green color for the icon */
+    text-decoration: none; /* No underline */
+}

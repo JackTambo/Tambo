@@ -1,0 +1,23 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    background: linear-gradient(to bottom right, #e0e0e0, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-touch-callout: none;  /* Prevent long-press callout on iOS */
+    -webkit-user-select: none;    /* Disable text selection in Safari */
+    -moz-user-select: none;       /* Disable text selection in Firefox */
+    -ms-user-select: none;        /* Disable text selection in IE/Edge */
+    user-select: none;            /* Disable text selection in all browsers */
+    touch-action: manipulation;   /* Prevent additional touch actions */
+}
+
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    -webkit-user-drag: none;      /* Prevent dragging canvas */
+}
