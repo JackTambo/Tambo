@@ -21,14 +21,12 @@
 
         .container {
             display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5 cards per row */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
             gap: 10px; /* Gap between cards */
             padding: 20px; /* Padding around the grid */
         }
 
         .card {
-            width: 190px;
-            height: 254px;
             background: #07182E;
             position: relative;
             display: flex;
@@ -38,6 +36,7 @@
             overflow: hidden;
             border-radius: 20px;
             cursor: pointer; /* Pointer cursor on hover */
+            padding: 10px; /* Added padding for better spacing */
         }
 
         .card h2, .card {
