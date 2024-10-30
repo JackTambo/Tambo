@@ -30,20 +30,20 @@
             background: #07182E;
             position: relative;
             display: flex;
-            flex-direction: column; /* Added for vertical alignment */
-            justify-content: center; /* Center align items */
-            align-items: center; /* Center align items */
+            justify-content: center; /* Center items vertically */
+            align-items: center; /* Center items horizontally */
             overflow: hidden;
             border-radius: 20px;
             cursor: pointer; /* Pointer cursor on hover */
             padding: 10px; /* Added padding for better spacing */
+            height: 150px; /* Fixed height to center text vertically */
         }
 
-        .card h2, .card {
+        .card h2 {
             z-index: 1; /* Stack order */
             color: white; /* Text color */
             text-align: center; /* Center text */
-            margin: 10px 0; /* Margin for spacing */
+            margin: 0; /* Remove margin */
         }
 
         .card::before {
@@ -72,13 +72,6 @@
             inset: 5px; /* Space from edges */
             border-radius: 15px; /* Rounded edges */
         }
-
-        .song {
-            z-index: 1; /* Stack order */
-            color: #C3B1E1; /* Text color */
-            text-align: center; /* Center text */
-            margin: 10px 0; /* Margin for spacing */
-        }
     </style>
 </head>
 <body>
@@ -87,35 +80,27 @@
         <!-- Create cards with clickable functionality -->
         <div class="card" onclick="location.href='Cube.html'">
             <h2>The Color Changing Cube</h2>
-            <div class="song"><i></i></div>
         </div>
         <div class="card" onclick="location.href='Matrix.html'">
             <h2>The Matrix Rain</h2>
-            <div class="song"><i>Letters and numbers<br>fall from the sky and stuff</i></div>
         </div>
         <div class="card" onclick="location.href='Part.html'">
             <h2>Particles</h2>
-            <div class="song"><i>When you tap the screen, stuff happens</i></div>
         </div>
         <div class="card" onclick="location.href='santa.html'">
             <h2>???</h2>
-            <div class="song"><i>Epilepsy Warning</i></div>
         </div>
         <div class="card" onclick="location.href='Draw.html'">
             <h2>Draw</h2>
-            <div class="song"><i>Again... Pretty self-explanatory</i></div>
         </div>
         <div class="card" onclick="location.href='Ripple.html'">
             <h2>Ripple</h2>
-            <div class="song"><i>Circles and stuff</i></div>
         </div>
         <div class="card" onclick="location.href='Non.html'">
             <h2>Non-Verbal Keyboard</h2>
-            <div class="song"><i>The only useful thing here</i></div>
         </div>
         <div class="card" onclick="location.href='Game.html'">
             <h2>Upcoming Games</h2>
-            <div class="song"><i>You know what I'm about to say</i></div>
         </div>
     </div>
 </body>
